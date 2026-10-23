@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates & Awards - Deepak Jarugula</title>
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="logo">DJ</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="certificates.html" class="active">Certificates</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="nav-socials">
+      <a href="#"><i data-lucide="twitter"></i></a>
+      <a href="https://github.com/jaruguladeepak" target="_blank"><i data-lucide="github"></i></a>
+      <a href="#"><i data-lucide="linkedin"></i></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section text-center" style="padding-top: 6rem; padding-bottom: 4rem;" data-aos="fade-up">
+    <div class="floating" style="margin-bottom: 2rem; color: var(--text-color);">
+      <i data-lucide="award" style="width: 80px; height: 80px;"></i>
+    </div>
+    <h1 class="hero-title" style="margin-bottom: 1.5rem;">Certificates & Awards</h1>
+    <p class="hero-subtitle" style="max-width: 900px; margin: 0 auto 3rem auto; font-size: 1.25rem;">
+      Every certification reflects my commitment to continuous learning and staying current with modern software development, Artificial Intelligence, automation, and emerging technologies.
+    </p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="#" class="btn-primary">View Resume</a>
+      <a href="index.html#contact" class="btn-secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Achievement Statistics -->
+  <section class="section stats-section" style="padding-top: 0; padding-bottom: 4rem;">
+    <div class="stats-grid">
+      <div class="stat-card glass-card" data-aos="fade-up">
+        <h3 class="stat-number" id="stat-cert-count" data-target="0">0</h3>
+        <p class="stat-label">Certificates</p>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="stat-number" id="stat-domain-count" data-target="0">0</h3>
+        <p class="stat-label">Technology Domains</p>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="stat-number" data-target="100">0</h3>
+        <p class="stat-label">Hours of Learning</p>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="stat-text">Always</h3>
+        <p class="stat-label">Learning</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Certifications -->
+  <section class="section" id="featured-certs-section" style="padding-top: 0; padding-bottom: 4rem;">
+    <h2 class="section-title">Featured Certifications</h2>
+    <div class="featured-projects-grid" id="featured-certs-grid">
+      <!-- Dynamically populated by JS -->
+    </div>
+  </section>
+
+  <!-- Categories & All Certifications -->
+  <section class="section" style="padding-top: 0;">
+    <h2 class="section-title">All Certifications</h2>
+    <div class="filters-container" style="justify-content: center; margin-bottom: 2rem;" data-aos="fade-up">
+      <div class="filter-buttons" id="cert-filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <!-- Buttons dynamically generated -->
+      </div>
+    </div>
+    
+    <div class="projects-grid" id="all-certs-grid">
+      <!-- Dynamically populated by JS -->
+      <div class="skeleton-card glass-card"></div>
+      <div class="skeleton-card glass-card"></div>
+      <div class="skeleton-card glass-card"></div>
+    </div>
+    <div id="no-certs-results" class="text-center" style="display: none; color: var(--nav-link-color);">
+      <p>No certificates found in this category.</p>
+    </div>
+  </section>
+
+  <!-- Awards & Achievements -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Awards & Achievements</h2>
+    <div class="projects-grid">
+      <!-- Award 1 -->
+      <div class="project-card glass-card hover-lift">
+        <h3 style="display:flex; align-items:center; gap: 0.5rem;"><i data-lucide="trophy" style="color:#d4af37;"></i> Academic Excellence</h3>
+        <p style="color: var(--nav-link-color); font-size: 0.875rem; margin-bottom: 1rem;">2025 | University Name</p>
+        <p>Awarded for securing top tier grades across all core computer science and AI subjects during the academic year.</p>
+      </div>
+      <!-- Award 2 -->
+      <div class="project-card glass-card hover-lift">
+        <h3 style="display:flex; align-items:center; gap: 0.5rem;"><i data-lucide="medal" style="color:#c0c0c0;"></i> Hackathon Runner-up</h3>
+        <p style="color: var(--nav-link-color); font-size: 0.875rem; margin-bottom: 1rem;">2024 | TechFest</p>
+        <p>Developed an AI-powered smart surveillance prototype within 48 hours, earning second place overall.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Journey Timeline -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Learning Journey</h2>
+    <div class="journey-timeline">
+      <div class="journey-step glass-card" data-aos="zoom-in">
+        <h4>2024</h4>
+        <p>Started Programming & Web Development</p>
+      </div>
+      <div class="journey-step glass-card" data-aos="zoom-in">
+        <h4>2025</h4>
+        <p>Python Certification & Machine Learning Basics</p>
+      </div>
+      <div class="journey-step glass-card" data-aos="zoom-in">
+        <h4>2025</h4>
+        <p>Advanced AI Projects & Computer Vision</p>
+      </div>
+      <div class="journey-step glass-card" data-aos="zoom-in">
+        <h4>2026</h4>
+        <p>Automation Systems & IoT Integration</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Earned -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Certified Skills</h2>
+    <div class="interests-grid" id="certified-skills-grid">
+      <!-- Dynamically populated from JSON skills arrays -->
+    </div>
+  </section>
+
+  <!-- Currently Learning -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Currently Learning</h2>
+    <div class="interests-grid">
+      <span class="interest-pill glass-card" style="border: 1px solid var(--text-color);">Advanced Machine Learning <span style="font-size: 0.75rem; color: var(--nav-link-color);">(In Progress)</span></span>
+      <span class="interest-pill glass-card">Cloud Computing <span style="font-size: 0.75rem; color: var(--nav-link-color);">(Coming Soon)</span></span>
+      <span class="interest-pill glass-card" style="border: 1px solid var(--text-color);">System Design <span style="font-size: 0.75rem; color: var(--nav-link-color);">(In Progress)</span></span>
+      <span class="interest-pill glass-card">Docker & Kubernetes <span style="font-size: 0.75rem; color: var(--nav-link-color);">(Coming Soon)</span></span>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section cta-section text-center" data-aos="zoom-in">
+    <h2 class="section-title">Learning Never Stops</h2>
+    <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.125rem;">
+      Every certification represents another step toward becoming a better engineer and building solutions that create real-world impact.
+    </p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="index.html#contact" class="btn-primary">Contact Me</a>
+      <a href="projects.html" class="btn-secondary">View Projects</a>
+    </div>
+  </section>
+
+  <!-- Certificate Modal -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="cert-modal-close"><i data-lucide="x"></i></button>
+      <div class="modal-header">
+        <h2 id="modal-cert-title">Certificate Name</h2>
+        <p id="modal-cert-issuer" style="color: var(--nav-link-color); font-size: 1.125rem;">Issuer</p>
+      </div>
+      <div class="modal-body">
+        <div class="cert-image-placeholder glass-card" style="height: 250px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; color: var(--nav-link-color);">
+          <i data-lucide="file-badge" style="width: 64px; height: 64px;"></i>
+        </div>
+        <div class="modal-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+          <p><strong>Issue Date:</strong> <span id="modal-cert-date">Date</span></p>
+          <p><strong>Credential ID:</strong> <span id="modal-cert-id">ID</span></p>
+          <p><strong>Category:</strong> <span id="modal-cert-category">Category</span></p>
+        </div>
+        <div class="tech-stack" id="modal-cert-skills" style="margin-bottom: 2rem;"></div>
+      </div>
+      <div class="modal-footer hero-actions" style="justify-content: flex-start;">
+        <a href="#" id="modal-cert-verify" target="_blank" class="btn-primary">Verify <i data-lucide="external-link"></i></a>
+        <a href="#" id="modal-cert-download" target="_blank" class="btn-secondary">Download PDF <i data-lucide="download"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Deepak Jarugula</h3>
+        <p>Building practical, scalable, and impactful AI & software solutions to solve real-world challenges.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-socials">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="https://github.com/jaruguladeepak" target="_blank"><i data-lucide="github"></i></a>
+          <a href="#"><i data-lucide="linkedin"></i></a>
+          <a href="#"><i data-lucide="twitter"></i></a>
+          <a href="#"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deepak Jarugula. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="certificates.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

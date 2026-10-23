@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepak Jarugula - Portfolio</title>
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="nav-links">
+      <a href="index.html#home" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="logo">
+      DJ
+    </div>
+
+    <div class="nav-socials">
+      <a href="#"><i data-lucide="twitter"></i></a>
+      <a href="#"><i data-lucide="github"></i></a>
+      <a href="#"><i data-lucide="linkedin"></i></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero section">
+    <div class="hero-left" data-aos="fade-right">
+      <div class="portrait-container floating">
+        <span>Profile Picture</span>
+      </div>
+      
+      <div class="hire-me-container">
+        <div class="hire-me-inner">Hire Me</div>
+        <svg class="circular-text" viewBox="0 0 100 100">
+          <path id="curve" fill="transparent" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+          <text>
+            <textPath href="#curve" startOffset="0">WEB DEVELOPER • AI DEVELOPER • </textPath>
+          </text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-right" data-aos="fade-left">
+      <h1 class="hero-title">
+        Deepak Jarugula
+      </h1>
+      <h2 class="hero-subtitle">
+        <span class="typed-text"></span>
+      </h2>
+      <p class="hero-desc">
+        I build AI-powered solutions that solve real-world problems.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="projects.html" class="btn-primary">
+          View Projects <i data-lucide="arrow-right" class="btn-icon"></i>
+        </a>
+        <a href="#" class="btn-secondary">
+          Download Resume <i data-lucide="download" class="btn-icon"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section" data-aos="fade-up">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <!-- Programming -->
+      <div class="skill-category glass-card">
+        <h3>Programming</h3>
+        <div class="skill-items">
+          <span><i class="fa-brands fa-python"></i> Python</span>
+          <span><i class="fa-brands fa-java"></i> Java</span>
+          <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          <span>C</span>
+        </div>
+      </div>
+      <!-- Web -->
+      <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Web</h3>
+        <div class="skill-items">
+          <span><i class="fa-brands fa-html5"></i> HTML</span>
+          <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          <span><i class="fa-brands fa-react"></i> React</span>
+          <span>Tailwind</span>
+        </div>
+      </div>
+      <!-- Backend -->
+      <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Backend</h3>
+        <div class="skill-items">
+          <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+          <span>Express</span>
+        </div>
+      </div>
+      <!-- AI / ML -->
+      <div class="skill-category glass-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>AI / ML</h3>
+        <div class="skill-items">
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Scikit-learn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section id="experience" class="section" data-aos="fade-up">
+    <div class="timeline-container">
+      <div class="timeline-col">
+        <h2 class="section-title" style="text-align: left;">Education</h2>
+        <div class="timeline-item glass-card">
+          <h4>Bachelor of Technology</h4>
+          <h5>Computer Science Engineering</h5>
+          <span class="timeline-date">Expected Graduation</span>
+        </div>
+      </div>
+      <div class="timeline-col">
+        <h2 class="section-title" style="text-align: left;">Certifications</h2>
+        <div class="timeline-item glass-card">
+          <h4>Python & Machine Learning</h4>
+          <h4>SQL & Git</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-card glass-card">
+      <p><i data-lucide="mail"></i> deepak@example.com</p>
+      <p><i data-lucide="linkedin"></i> linkedin.com/in/deepak</p>
+      <p><i data-lucide="map-pin"></i> India</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Deepak Jarugula</h3>
+        <p>Building practical, scalable, and impactful AI & software solutions to solve real-world challenges.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-socials">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="https://github.com/jaruguladeepak" target="_blank"><i data-lucide="github"></i></a>
+          <a href="#"><i data-lucide="linkedin"></i></a>
+          <a href="#"><i data-lucide="twitter"></i></a>
+          <a href="#"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deepak Jarugula. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

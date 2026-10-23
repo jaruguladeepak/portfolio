@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Python Programming",
+    "issuer": "Cisco",
+    "date": "2026-02-10",
+    "category": "Programming",
+    "skills": ["Python", "OOP", "Data Structures"],
+    "credentialId": "ABC123XYZ",
+    "verify": "#",
+    "download": "#"
+  },
+  {
+    "title": "Machine Learning Foundations",
+    "issuer": "Coursera",
+    "date": "2025-11-15",
+    "category": "Machine Learning",
+    "skills": ["Scikit-Learn", "Data Preprocessing", "Algorithms"],
+    "credentialId": "ML-987654",
+    "verify": "#",
+    "download": "#"
+  },
+  {
+    "title": "Web Development Bootcamp",
+    "issuer": "Udemy",
+    "date": "2025-08-20",
+    "category": "Web Development",
+    "skills": ["HTML", "CSS", "JavaScript", "Node.js"],
+    "credentialId": "UC-1234-ABCD",
+    "verify": "#",
+    "download": "#"
+  },
+  {
+    "title": "Introduction to Artificial Intelligence",
+    "issuer": "IBM",
+    "date": "2024-10-05",
+    "category": "Artificial Intelligence",
+    "skills": ["AI Concepts", "Neural Networks", "Ethics"],
+    "credentialId": "IBM-AI-555",
+    "verify": "#",
+    "download": "#"
+  }
+]

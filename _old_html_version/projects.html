@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Deepak Jarugula</title>
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="logo">DJ</div>
+    <div class="nav-socials">
+      <a href="#"><i data-lucide="twitter"></i></a>
+      <a href="https://github.com/jaruguladeepak" target="_blank"><i data-lucide="github"></i></a>
+      <a href="#"><i data-lucide="linkedin"></i></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="section text-center" style="padding-top: 6rem; padding-bottom: 4rem;" data-aos="fade-up">
+    <h1 class="hero-title" style="margin-bottom: 1.5rem;">My Projects</h1>
+    <p class="hero-subtitle" style="max-width: 900px; margin: 0 auto 3rem auto; font-size: 1.25rem;">
+      Every project represents an opportunity to solve a real-world problem. From AI-powered systems and automation to full-stack web applications, I focus on building practical, scalable, and impactful solutions.
+    </p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="https://github.com/jaruguladeepak" target="_blank" class="btn-primary">View GitHub <i data-lucide="github" class="btn-icon"></i></a>
+      <a href="index.html#contact" class="btn-secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Project Statistics -->
+  <section class="section stats-section" style="padding-top: 0; padding-bottom: 4rem;">
+    <div class="stats-grid">
+      <div class="stat-card glass-card" data-aos="fade-up">
+        <h3 class="stat-number" id="stat-repos" data-target="0">0</h3>
+        <p class="stat-label">Repositories</p>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="stat-number" id="stat-stars" data-target="0">0</h3>
+        <p class="stat-label">Total Stars</p>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="stat-number" id="stat-langs" data-target="0">0</h3>
+        <p class="stat-label">Technologies</p>
+      </div>
+      <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="stat-text">100%</h3>
+        <p class="stat-label">Open Source</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories & Search -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;" data-aos="fade-up">
+    <div class="filters-container">
+      <div class="search-bar glass-card">
+        <i data-lucide="search"></i>
+        <input type="text" id="project-search" placeholder="Search by name, description, or topic..." />
+      </div>
+      <div class="sort-dropdown glass-card">
+        <select id="project-sort">
+          <option value="updated">Recently Updated</option>
+          <option value="stars">Most Stars</option>
+          <option value="name">Repository Name</option>
+          <option value="size">Largest Repository</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-buttons" id="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <!-- Buttons will be generated dynamically -->
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section" id="featured-section" style="padding-top: 0; padding-bottom: 4rem;">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="featured-projects-grid">
+      
+      <!-- Featured Project 1 -->
+      <div class="featured-card glass-card hover-lift" data-aos="fade-up">
+        <div class="featured-content">
+          <h3>AI CCTV Surveillance System</h3>
+          <div class="tech-stack" style="margin-bottom: 1.5rem;">
+            <span>Python</span><span>YOLO</span><span>OpenCV</span>
+          </div>
+          <p><strong>Problem:</strong> Traditional CCTV systems require constant human monitoring and cannot automatically detect crimes in progress.</p>
+          <p><strong>Solution:</strong> An AI-powered surveillance system for real-time crime detection that automatically generates alerts.</p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--nav-link-color);">
+            <li>Real-time CCTV analysis</li>
+            <li>Computer Vision powered</li>
+            <li>Scalable architecture for smart city environments</li>
+          </ul>
+          <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+             <a href="https://github.com/jaruguladeepak" target="_blank" class="btn-primary" style="padding: 0.5rem 1rem;">GitHub <i data-lucide="github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Project 2 -->
+      <div class="featured-card glass-card hover-lift" data-aos="fade-up" data-aos-delay="100">
+        <div class="featured-content">
+          <h3>Smart Ambulance Traffic Management</h3>
+          <div class="tech-stack" style="margin-bottom: 1.5rem;">
+            <span>Python</span><span>Maps API</span><span>IoT</span>
+          </div>
+          <p><strong>Problem:</strong> Emergency vehicles often get stuck in traffic, leading to delayed medical response times.</p>
+          <p><strong>Solution:</strong> Detects ambulance locations and automatically clears traffic signals in their path to reduce response time.</p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--nav-link-color);">
+            <li>Live location tracking</li>
+            <li>Automated signal control</li>
+            <li>IoT integration</li>
+          </ul>
+          <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+             <a href="https://github.com/jaruguladeepak" target="_blank" class="btn-primary" style="padding: 0.5rem 1rem;">GitHub <i data-lucide="github"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- All GitHub Projects -->
+  <section class="section" style="padding-top: 0;">
+    <h2 class="section-title">All GitHub Repositories</h2>
+    <div class="projects-grid" id="all-projects-grid">
+      <!-- Loading Skeleton -->
+      <div class="skeleton-card glass-card"></div>
+      <div class="skeleton-card glass-card"></div>
+      <div class="skeleton-card glass-card"></div>
+      <div class="skeleton-card glass-card"></div>
+    </div>
+    <div id="no-results" class="text-center" style="display: none; color: var(--nav-link-color);">
+      <p>No projects found matching your search.</p>
+    </div>
+  </section>
+
+  <!-- Development Process -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Development Process</h2>
+    <div class="process-flow">
+      <div class="process-step glass-card">Idea</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Research</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Planning</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Design</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Development</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Testing</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Deployment</div>
+      <i data-lucide="arrow-down" class="process-arrow"></i>
+      <div class="process-step glass-card">Maintenance</div>
+    </div>
+  </section>
+
+  <!-- Technology Distribution -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Technology Distribution</h2>
+    <div class="tech-distribution glass-card" id="tech-distribution-container">
+      <p style="text-align: center; color: var(--nav-link-color);">Analyzing GitHub repositories...</p>
+    </div>
+  </section>
+
+  <!-- GitHub Activity -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">GitHub Activity</h2>
+    <div class="activity-grid">
+      <div class="activity-card glass-card text-center">
+        <i data-lucide="git-commit" style="width:48px;height:48px;margin-bottom:1rem;"></i>
+        <h3>Total Repositories</h3>
+        <p id="activity-repos" style="font-size:1.5rem;font-weight:700;">-</p>
+      </div>
+      <div class="activity-card glass-card text-center">
+        <i data-lucide="users" style="width:48px;height:48px;margin-bottom:1rem;"></i>
+        <h3>Followers</h3>
+        <p id="activity-followers" style="font-size:1.5rem;font-weight:700;">-</p>
+      </div>
+      <div class="activity-card glass-card text-center">
+        <i data-lucide="star" style="width:48px;height:48px;margin-bottom:1rem;"></i>
+        <h3>Total Stars</h3>
+        <p id="activity-stars" style="font-size:1.5rem;font-weight:700;">-</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Project Timeline</h2>
+    <div class="journey-timeline">
+      <div class="journey-step glass-card">
+        <h4>2026</h4>
+        <p>AI CCTV Surveillance System</p>
+      </div>
+      <div class="journey-step glass-card">
+        <h4>2025</h4>
+        <p>Smart Ambulance Traffic System</p>
+      </div>
+      <div class="journey-step glass-card">
+        <h4>2024</h4>
+        <p>CRM Automation Platform</p>
+      </div>
+      <div class="journey-step glass-card">
+        <h4>Present</h4>
+        <p>Next AI Project...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Projects -->
+  <section class="section" data-aos="fade-up">
+    <h2 class="section-title">Currently Exploring</h2>
+    <div class="interests-grid">
+      <span class="interest-pill glass-card">Smart Healthcare AI</span>
+      <span class="interest-pill glass-card">Autonomous Traffic Analytics</span>
+      <span class="interest-pill glass-card">AI Interview Assistant</span>
+      <span class="interest-pill glass-card">IoT Smart Campus Platform</span>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section cta-section text-center" data-aos="zoom-in">
+    <h2 class="section-title">Interested in collaborating?</h2>
+    <p style="margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; font-size:1.125rem;">
+      I'm always open to discussing innovative software, AI, or automation projects and building impactful solutions together.
+    </p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="index.html#contact" class="btn-primary">Get in Touch</a>
+      <a href="https://github.com/jaruguladeepak" target="_blank" class="btn-secondary">View GitHub</a>
+      <a href="#" class="btn-secondary">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Project Modal Overlay (Auto Sync Repos) -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="modal-close"><i data-lucide="x"></i></button>
+      <div class="modal-header">
+        <h2 id="modal-title">Project Name</h2>
+        <div class="modal-stats">
+          <span><i data-lucide="star"></i> <span id="modal-stars">0</span></span>
+          <span><i data-lucide="git-fork"></i> <span id="modal-forks">0</span></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modal-desc" class="modal-description">Project description goes here.</p>
+        <div class="tech-stack" id="modal-topics" style="margin-top: 1.5rem; margin-bottom: 2rem;"></div>
+        <div class="modal-details">
+          <p><strong>Language:</strong> <span id="modal-lang">Unknown</span></p>
+          <p><strong>Last Updated:</strong> <span id="modal-updated">Unknown</span></p>
+          <p><strong>Size:</strong> <span id="modal-size">Unknown</span></p>
+          <p><strong>License:</strong> <span id="modal-license">None</span></p>
+        </div>
+      </div>
+      <div class="modal-footer hero-actions" style="margin-top: 2rem; justify-content: flex-start;">
+        <a href="#" id="modal-github" target="_blank" class="btn-secondary">GitHub <i data-lucide="github"></i></a>
+        <a href="#" id="modal-demo" target="_blank" class="btn-primary" style="display:none;">Live Demo <i data-lucide="external-link"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Deepak Jarugula</h3>
+        <p>Building practical, scalable, and impactful AI & software solutions to solve real-world challenges.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-socials">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="https://github.com/jaruguladeepak" target="_blank"><i data-lucide="github"></i></a>
+          <a href="#"><i data-lucide="linkedin"></i></a>
+          <a href="#"><i data-lucide="twitter"></i></a>
+          <a href="#"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deepak Jarugula. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="github.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
