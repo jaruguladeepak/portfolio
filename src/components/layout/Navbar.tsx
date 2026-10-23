@@ -22,15 +22,16 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // Close mobile menu on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
-  }, [pathname]);
+    setActiveSection("");
+  }
 
   // Track active section on home page scroll
   useEffect(() => {
     if (pathname !== "/") {
-      setActiveSection("");
       return;
     }
 

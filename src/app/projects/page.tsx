@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Search, Star, GitFork, ExternalLink, Activity, Users, Code, Info } from "lucide-react";
+import { useEffect, useState, useMemo } from "react";
+import { Search, Star, GitFork, ExternalLink, Activity, Code } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import { FadeUp, FadeIn } from "@/components/animations/FadeUp";
+import { FadeUp } from "@/components/animations/FadeUp";
 
 const GITHUB_USERNAME = "jaruguladeepak";
 
@@ -19,14 +19,13 @@ interface Repository {
   topics: string[];
   updated_at: string;
   size: number;
+  fork?: boolean;
   license?: { name: string };
 }
 
 export default function Projects() {
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  const [filteredRepos, setFilteredRepos] = useState<Repository[]>([]);
   const [profileStats, setProfileStats] = useState({ repos: 0, stars: 0, langs: 0, followers: 0 });
-  const [languageStats, setLanguageStats] = useState<{ lang: string; percentage: number }[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortMethod, setSortMethod] = useState("updated");
   const [currentFilter, setCurrentFilter] = useState("all");
@@ -34,62 +33,47 @@ export default function Projects() {
   const [selectedRepo, setSelectedRepo] = useState<Repository | null>(null);
 
   useEffect(() => {
+    const fetchProfileStats = async () => {
+      try {
+        const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+        const data = await res.json();
+        setProfileStats(prev => ({ ...prev, repos: data.public_repos, followers: data.followers }));
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    const fetchRepositories = async () => {
+      try {
+        const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
+        const data = await res.json();
+        const nonForks: Repository[] = data.filter((repo: Repository) => !repo.fork);
+        setRepositories(nonForks);
+
+        let stars = 0;
+        const langs = new Set<string>();
+        const allTopics = new Set<string>();
+
+        nonForks.forEach((repo: Repository) => {
+          stars += repo.stargazers_count;
+          if (repo.language) {
+            langs.add(repo.language);
+          }
+          if (repo.topics) repo.topics.forEach(t => allTopics.add(t));
+        });
+
+        setProfileStats(prev => ({ ...prev, stars, langs: langs.size }));
+        setTopics(Array.from(allTopics).sort());
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetchProfileStats();
     fetchRepositories();
   }, []);
 
-  useEffect(() => {
-    filterAndSortRepos();
-  }, [searchTerm, sortMethod, currentFilter, repositories]);
-
-  const fetchProfileStats = async () => {
-    try {
-      const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
-      const data = await res.json();
-      setProfileStats(prev => ({ ...prev, repos: data.public_repos, followers: data.followers }));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const fetchRepositories = async () => {
-    try {
-      const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
-      const data = await res.json();
-      const nonForks = data.filter((repo: any) => !repo.fork);
-      setRepositories(nonForks);
-
-      let stars = 0;
-      const langs = new Set<string>();
-      const langCounts: Record<string, number> = {};
-      let totalLangs = 0;
-      const allTopics = new Set<string>();
-
-      nonForks.forEach((repo: Repository) => {
-        stars += repo.stargazers_count;
-        if (repo.language) {
-          langs.add(repo.language);
-          langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
-          totalLangs++;
-        }
-        if (repo.topics) repo.topics.forEach(t => allTopics.add(t));
-      });
-
-      setProfileStats(prev => ({ ...prev, stars, langs: langs.size }));
-      setTopics(Array.from(allTopics).sort());
-
-      const langStats = Object.entries(langCounts)
-        .map(([lang, count]) => ({ lang, percentage: (count / totalLangs) * 100 }))
-        .sort((a, b) => b.percentage - a.percentage)
-        .slice(0, 5);
-
-      setLanguageStats(langStats);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const filterAndSortRepos = () => {
+  const filteredRepos = useMemo(() => {
     let result = [...repositories];
 
     if (currentFilter !== "all") {
@@ -113,18 +97,13 @@ export default function Projects() {
     else if (sortMethod === "size") result.sort((a, b) => b.size - a.size);
     else result.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
 
-    setFilteredRepos(result);
-  };
+    return result;
+  }, [repositories, currentFilter, searchTerm, sortMethod]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric', month: 'short', day: 'numeric'
     });
-  };
-
-  const formatSize = (kb: number) => {
-    if (kb < 1024) return `${kb} KB`;
-    return `${(kb / 1024).toFixed(1)} MB`;
   };
 
   const getLanguageColor = (lang: string) => {
@@ -135,8 +114,6 @@ export default function Projects() {
     };
     return colors[lang] || '#8b949e';
   };
-
-  const featured = repositories.filter(repo => repo.stargazers_count > 0 || (repo.topics && repo.topics.includes('featured'))).slice(0, 3);
 
   return (
     <>

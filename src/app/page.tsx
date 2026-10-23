@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Download, Server, Briefcase, FileText } from "lucide-react";
+import { ArrowRight, Server, FileText } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { FadeUp, FadeIn } from "@/components/animations/FadeUp";
 import { motion } from "framer-motion";

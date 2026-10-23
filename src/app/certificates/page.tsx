@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import Link from "next/link";
 import { Award, Trophy, Medal, FileBadge, ExternalLink, Download } from "lucide-react";
 import { FadeUp } from "@/components/animations/FadeUp";
 import certificatesData from "@/data/certificates.json";
@@ -38,25 +39,26 @@ function Counter({ target }: { target: number }) {
 }
 
 export default function Certificates() {
-  const [certificates, setCertificates] = useState<Certificate[]>(certificatesData);
-  const [categories, setCategories] = useState<string[]>([]);
-  const [skills, setSkills] = useState<string[]>([]);
+  const certificates = certificatesData as Certificate[];
   const [currentFilter, setCurrentFilter] = useState("all");
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
-  useEffect(() => {
+  const categories = useMemo(() => {
     const cats = new Set<string>();
-    const sks = new Set<string>();
-
     certificatesData.forEach(cert => {
       cats.add(cert.category);
+    });
+    return Array.from(cats).sort();
+  }, []);
+
+  const skills = useMemo(() => {
+    const sks = new Set<string>();
+    certificatesData.forEach(cert => {
       if (cert.skills) {
         cert.skills.forEach(skill => sks.add(skill));
       }
     });
-
-    setCategories(Array.from(cats).sort());
-    setSkills(Array.from(sks).sort());
+    return Array.from(sks).sort();
   }, []);
 
   const filteredCerts = currentFilter === "all" 
@@ -67,8 +69,8 @@ export default function Certificates() {
     return new Date(dateStr).toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
   };
 
-  const CertCard = ({ cert, featured = false }: { cert: Certificate, featured?: boolean }) => (
-    <div className="project-card glass-card h-full flex flex-col">
+  const CertCard = ({ cert, featured }: { cert: Certificate; featured?: boolean }) => (
+    <div className={`project-card glass-card h-full flex flex-col ${featured ? "featured-card" : ""}`}>
       <div className="card-banner bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 h-32 rounded-lg mb-6 flex items-center justify-center text-[var(--glow-start)]">
         <Award className="w-12 h-12" />
       </div>
@@ -260,8 +262,8 @@ export default function Certificates() {
             Every certification represents another step toward becoming a better engineer and building solutions that create real-world impact.
           </p>
           <div className="hero-actions justify-center">
-            <a href="/#contact" className="btn-primary">Contact Me</a>
-            <a href="/projects" className="btn-secondary">View Projects</a>
+            <Link href="/#contact" className="btn-primary">Contact Me</Link>
+            <Link href="/projects" className="btn-secondary">View Projects</Link>
           </div>
         </FadeUp>
       </section>

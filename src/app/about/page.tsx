@@ -1,7 +1,7 @@
 "use client";
 
 import { BrainCircuit, Layout, Zap, Puzzle } from "lucide-react";
-import { FadeUp, FadeIn } from "@/components/animations/FadeUp";
+import { FadeUp } from "@/components/animations/FadeUp";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
